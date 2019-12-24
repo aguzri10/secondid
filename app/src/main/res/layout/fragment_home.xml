@@ -1,14 +1,271 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragment.HomeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content">
 
-</FrameLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_margin="@dimen/dimen8dp"
+                android:textStyle="bold"
+                android:id="@+id/tv_news_category"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/news_category"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/dimen20sp" />
+
+            <LinearLayout
+                android:id="@+id/layout1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_news_category"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/dimen8dp"
+                android:paddingTop="@dimen/dimen8dp"
+                android:paddingRight="@dimen/dimen8dp"
+                android:paddingBottom="@dimen/dimen4dp">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/card_bussiness"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen200dp"
+                    android:layout_marginRight="@dimen/dimen4dp"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="@dimen/dimen8dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dimen200dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/bussines" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dimen200dp"
+                            android:background="@color/colorDarkTransparant">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/dimen200dp"
+                                android:gravity="center"
+                                android:text="Bussiness"
+                                android:textColor="@color/colorWhite"
+                                android:textSize="@dimen/dimen20sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/card_entertainment"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen200dp"
+                    android:layout_marginLeft="@dimen/dimen4dp"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="@dimen/dimen8dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dimen200dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/entertainment" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dimen200dp"
+                            android:background="@color/colorDarkTransparant">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/dimen200dp"
+                                android:gravity="center"
+                                android:text="Entertainment"
+                                android:textColor="@color/colorWhite"
+                                android:textSize="@dimen/dimen20sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/layout1"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/dimen8dp"
+                android:paddingTop="@dimen/dimen8dp"
+                android:paddingRight="@dimen/dimen8dp"
+                android:paddingBottom="@dimen/dimen4dp">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/card_health"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen200dp"
+                    android:layout_marginRight="@dimen/dimen4dp"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="@dimen/dimen8dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dimen200dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/health" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dimen200dp"
+                            android:background="@color/colorDarkTransparant">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/dimen200dp"
+                                android:gravity="center"
+                                android:text="Health"
+                                android:textColor="@color/colorWhite"
+                                android:textSize="@dimen/dimen20sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/card_science"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen200dp"
+                    android:layout_marginLeft="@dimen/dimen4dp"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="@dimen/dimen8dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dimen200dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/science" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dimen200dp"
+                            android:background="@color/colorDarkTransparant">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/dimen200dp"
+                                android:gravity="center"
+                                android:text="Science"
+                                android:textColor="@color/colorWhite"
+                                android:textSize="@dimen/dimen20sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/layout2"
+                android:orientation="horizontal"
+                android:padding="@dimen/dimen8dp">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/card_sports"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen200dp"
+                    android:layout_marginRight="@dimen/dimen4dp"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="@dimen/dimen8dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dimen200dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/sports" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dimen200dp"
+                            android:background="@color/colorDarkTransparant">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/dimen200dp"
+                                android:gravity="center"
+                                android:text="Sports"
+                                android:textColor="@color/colorWhite"
+                                android:textSize="@dimen/dimen20sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/card_technology"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen200dp"
+                    android:layout_marginLeft="@dimen/dimen4dp"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="@dimen/dimen8dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dimen200dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/entertainment" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dimen200dp"
+                            android:background="@color/colorDarkTransparant">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/dimen200dp"
+                                android:gravity="center"
+                                android:text="Technology"
+                                android:textColor="@color/colorWhite"
+                                android:textSize="@dimen/dimen20sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+        </RelativeLayout>
+    </android.support.v4.widget.NestedScrollView>
+</RelativeLayout>

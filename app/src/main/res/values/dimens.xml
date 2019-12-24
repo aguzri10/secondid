@@ -10,4 +10,6 @@
     <dimen name="dimen16dp">16dp</dimen>
     <dimen name="dimen18sp">18sp</dimen>
     <dimen name="dimen12sp">12sp</dimen>
+    <dimen name="dimen200dp">200dp</dimen>
+    <dimen name="dimen20sp">20sp</dimen>
 </resources>
