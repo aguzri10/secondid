@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity implements HeadlineView {
     private SwipeRefreshLayout swipeRefresh;
     private List<Articles> article;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -30,16 +30,16 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tv_news_category"
                 android:orientation="horizontal"
-                android:paddingLeft="@dimen/dimen8dp"
-                android:paddingTop="@dimen/dimen8dp"
-                android:paddingRight="@dimen/dimen8dp"
+                android:paddingLeft="@dimen/dimen16dp"
+                android:paddingTop="@dimen/dimen4dp"
+                android:paddingRight="@dimen/dimen16dp"
                 android:paddingBottom="@dimen/dimen4dp">
 
                 <android.support.v7.widget.CardView
                     android:id="@+id/card_bussiness"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dimen200dp"
-                    android:layout_marginRight="@dimen/dimen4dp"
+                    android:layout_marginRight="@dimen/dimen8dp"
                     android:layout_weight="1"
                     app:cardCornerRadius="@dimen/dimen8dp">
 
@@ -74,7 +74,7 @@
                     android:id="@+id/card_entertainment"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dimen200dp"
-                    android:layout_marginLeft="@dimen/dimen4dp"
+                    android:layout_marginLeft="@dimen/dimen8dp"
                     android:layout_weight="1"
                     app:cardCornerRadius="@dimen/dimen8dp">
 
@@ -112,16 +112,16 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/layout1"
                 android:orientation="horizontal"
-                android:paddingLeft="@dimen/dimen8dp"
+                android:paddingLeft="@dimen/dimen16dp"
                 android:paddingTop="@dimen/dimen8dp"
-                android:paddingRight="@dimen/dimen8dp"
+                android:paddingRight="@dimen/dimen16dp"
                 android:paddingBottom="@dimen/dimen4dp">
 
                 <android.support.v7.widget.CardView
                     android:id="@+id/card_health"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dimen200dp"
-                    android:layout_marginRight="@dimen/dimen4dp"
+                    android:layout_marginRight="@dimen/dimen8dp"
                     android:layout_weight="1"
                     app:cardCornerRadius="@dimen/dimen8dp">
 
@@ -156,7 +156,7 @@
                     android:id="@+id/card_science"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dimen200dp"
-                    android:layout_marginLeft="@dimen/dimen4dp"
+                    android:layout_marginLeft="@dimen/dimen8dp"
                     android:layout_weight="1"
                     app:cardCornerRadius="@dimen/dimen8dp">
 
@@ -194,13 +194,16 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/layout2"
                 android:orientation="horizontal"
-                android:padding="@dimen/dimen8dp">
+                android:paddingTop="@dimen/dimen8dp"
+                android:paddingLeft="@dimen/dimen16dp"
+                android:paddingRight="@dimen/dimen16dp"
+                android:paddingBottom="@dimen/dimen4dp">
 
                 <android.support.v7.widget.CardView
                     android:id="@+id/card_sports"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dimen200dp"
-                    android:layout_marginRight="@dimen/dimen4dp"
+                    android:layout_marginRight="@dimen/dimen8dp"
                     android:layout_weight="1"
                     app:cardCornerRadius="@dimen/dimen8dp">
 
@@ -235,7 +238,7 @@
                     android:id="@+id/card_technology"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dimen200dp"
-                    android:layout_marginLeft="@dimen/dimen4dp"
+                    android:layout_marginLeft="@dimen/dimen8dp"
                     android:layout_weight="1"
                     app:cardCornerRadius="@dimen/dimen8dp">
 
@@ -247,7 +250,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/dimen200dp"
                             android:scaleType="centerCrop"
-                            android:src="@drawable/entertainment" />
+                            android:src="@drawable/technology" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
