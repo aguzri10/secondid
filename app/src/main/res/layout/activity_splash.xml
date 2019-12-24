@@ -8,12 +8,12 @@
     tools:context=".activity.SplashActivity">
 
     <ImageView
-        android:src="@drawable/seconidicon"
         android:id="@+id/iv_icon"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="@dimen/dimen120dp"
         android:layout_above="@id/tv_appname"
-        android:layout_marginBottom="10dp" />
+        android:layout_marginBottom="@dimen/dimen10dp"
+        android:src="@drawable/seconidicon" />
 
     <TextView
         android:id="@+id/tv_appname"
@@ -21,9 +21,9 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:gravity="center"
-        android:text="Second. id"
-        android:textColor="#ffffff"
-        android:textSize="24sp"
+        android:text="@string/second_id"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/dimen24sp"
         android:textStyle="bold" />
 
     <TextView
@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_appname"
         android:gravity="center"
-        android:text="Know news only in here"
-        android:textColor="#ffffff"
-        android:textSize="14sp" />
+        android:text="@string/know_news_only_in_here"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/dimen14sp" />
 </RelativeLayout>
