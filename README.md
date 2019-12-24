@@ -6,4 +6,4 @@ Buid with Android Studio 3.3 and some libraries
 2. Retrofit 2
 3. Picasso
 
-Data taken form [NewsAPi](#https://newsapi.org/)
+Data taken form [NewsAPi](https://newsapi.org/)
