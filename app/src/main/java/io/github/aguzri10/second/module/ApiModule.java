@@ -13,4 +13,11 @@ public interface ApiModule {
             @Query("country") String country,
             @Query("apiKey") String apiKey
     );
+
+    @GET("top-headlines")
+    Call<ResponseModel> getBussiness(
+            @Query("country") String country,
+            @Query("category") String category,
+            @Query("apiKey") String apiKey
+    );
 }

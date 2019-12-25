@@ -21,7 +21,7 @@
             android:fitsSystemWindows="true"
             app:contentScrim="?attr/colorPrimary"
             app:expandedTitleMarginStart="@dimen/dimen64dp"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
             <ImageView
                 android:id="@+id/iv_image"
@@ -33,17 +33,17 @@
                 app:layout_collapseMode="parallax" />
 
             <View
-                android:layout_gravity="top"
-                android:fitsSystemWindows="true"
-                android:background="@drawable/scrim_topdown"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dimen80dp"/>
+                android:layout_height="@dimen/dimen80dp"
+                android:layout_gravity="top"
+                android:background="@drawable/scrim_topdown"
+                android:fitsSystemWindows="true" />
 
             <View
-                android:background="@drawable/scrim"
-                android:layout_gravity="bottom"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dimen160dp"/>
+                android:layout_height="@dimen/dimen160dp"
+                android:layout_gravity="bottom"
+                android:background="@drawable/scrim" />
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
@@ -74,48 +74,49 @@
 
             <TextView
                 android:id="@+id/tv_author"
-                android:layout_below="@id/tv_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/tv_title"
                 android:text="@string/content_of_news"
                 android:textSize="@dimen/dimen12sp" />
 
             <TextView
                 android:id="@+id/spacing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_below="@id/tv_title"
                 android:layout_toRightOf="@id/tv_author"
-                android:textSize="@dimen/dimen12sp"
                 android:text=" | "
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:textSize="@dimen/dimen12sp" />
 
             <TextView
-                android:layout_below="@id/tv_title"
-                android:layout_toRightOf="@id/spacing"
                 android:id="@+id/tv_published"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/tv_title"
+                android:layout_toRightOf="@id/spacing"
                 android:text="@string/default_date"
                 android:textSize="@dimen/dimen12sp" />
 
             <TextView
-                android:layout_below="@id/tv_published"
                 android:id="@+id/tv_content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/tv_published"
                 android:layout_marginTop="@dimen/dimen8dp"
                 android:layout_marginBottom="@dimen/dimen16dp"
                 android:text="@string/content_of_news"
                 android:textSize="@dimen/dimen14sp" />
         </RelativeLayout>
     </android.support.v4.widget.NestedScrollView>
-    
+
     <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_share"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/dimen16dp"
+        android:background="@color/colorPrimary"
         android:src="@drawable/ic_share"
         app:layout_anchor="@id/appbar"
-        app:layout_anchorGravity="bottom|right|end"
-        android:background="@color/colorPrimary"/>
+        app:layout_anchorGravity="bottom|right|end" />
 </android.support.design.widget.CoordinatorLayout>
