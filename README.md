@@ -7,3 +7,6 @@ Buid with Android Studio 3.3 and some libraries
 3. Picasso
 
 Data taken form [NewsAPi](https://newsapi.org/)
+
+# Screenshot
+![splash](https://raw.githubusercontent.com/aguzri10/secondid/master/app/src/main/res/drawable/splash.jpg) ![home](https://raw.githubusercontent.com/aguzri10/secondid/master/app/src/main/res/drawable/home.jpg) ![headline](https://raw.githubusercontent.com/aguzri10/secondid/master/app/src/main/res/drawable/headline.jpg) ![detail](https://raw.githubusercontent.com/aguzri10/secondid/master/app/src/main/res/drawable/detail.jpg)
