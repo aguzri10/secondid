@@ -78,6 +78,6 @@ public class HeadlineAdapter extends RecyclerView.Adapter<HeadlineAdapter.ViewHo
     }
 
     public interface ItemClickListerner {
-        void onItemClick(View view, int i);
+        public void onItemClick(View view, int i);
     }
 }

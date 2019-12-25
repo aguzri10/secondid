@@ -2,6 +2,7 @@ package io.github.aguzri10.second.fragment;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -19,6 +20,7 @@ import android.widget.Toast;
 import java.util.List;
 
 import io.github.aguzri10.second.R;
+import io.github.aguzri10.second.activity.DetailActivity;
 import io.github.aguzri10.second.adapter.HeadlineAdapter;
 import io.github.aguzri10.second.model.Articles;
 import io.github.aguzri10.second.presenter.HeadlinePresenter;
@@ -57,6 +59,25 @@ public class HeadlineFragment extends Fragment implements HeadlineView {
             @Override
             public void onRefresh() {
                 presenter.getDataHeadline(country, apiKey);
+            }
+        });
+
+        itemClickListener = (new HeadlineAdapter.ItemClickListerner() {
+            @Override
+            public void onItemClick(View view, int i) {
+                String image = article.get(i).getUrlToImage();
+                String title = article.get(i).getTitle();
+                String author = article.get(i).getAuthor();
+                String published = article.get(i).getPublishedAt();
+                String content = article.get(i).getContent();
+
+                Intent intent = new Intent(getContext(), DetailActivity.class);
+                intent.putExtra("image", image);
+                intent.putExtra("title", title);
+                intent.putExtra("author", author);
+                intent.putExtra("published", published);
+                intent.putExtra("content", content);
+                startActivity(intent);
             }
         });
     }

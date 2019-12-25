@@ -16,6 +16,7 @@
         android:layout_height="wrap_content">
 
         <ImageView
+            android:src="@drawable/technology"
             android:id="@+id/iv_image"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dimen240dp"
@@ -26,7 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@id/iv_image"
-            android:background="@color/colorBlackTransparant"
+            android:background="@drawable/scrim_forlist"
             android:orientation="vertical">
 
             <TextView
