@@ -1,14 +1,10 @@
 package io.github.aguzri10.second.fragment;
 
-import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -21,19 +17,20 @@ import java.util.List;
 
 import io.github.aguzri10.second.R;
 import io.github.aguzri10.second.activity.DetailActivity;
-import io.github.aguzri10.second.adapter.HeadlineAdapter;
+import io.github.aguzri10.second.adapter.NewsAdapter;
 import io.github.aguzri10.second.model.Articles;
 import io.github.aguzri10.second.presenter.HeadlinePresenter;
-import io.github.aguzri10.second.view.HeadlineView;
+import io.github.aguzri10.second.view.NewsView;
 
-public class HeadlineFragment extends Fragment implements HeadlineView {
+import static io.github.aguzri10.second.module.AppModule.apiKey;
+import static io.github.aguzri10.second.module.AppModule.country;
 
-    private static final String country = "id";
-    private static final String apiKey = "49e5243f2e9d418dbdb60f460e4e4ae9";
+public class HeadlineFragment extends Fragment implements NewsView {
+
     private RecyclerView recyclerView;
-    private HeadlineAdapter adapter;
+    private NewsAdapter adapter;
     private List<Articles> article;
-    private HeadlineAdapter .ItemClickListerner itemClickListener;
+    private NewsAdapter.ItemClickListerner itemClickListener;
     private HeadlinePresenter presenter;
     private SwipeRefreshLayout swipeRefresh;
 
@@ -62,7 +59,7 @@ public class HeadlineFragment extends Fragment implements HeadlineView {
             }
         });
 
-        itemClickListener = (new HeadlineAdapter.ItemClickListerner() {
+        itemClickListener = (new NewsAdapter.ItemClickListerner() {
             @Override
             public void onItemClick(View view, int i) {
                 String image = article.get(i).getUrlToImage();
@@ -94,7 +91,7 @@ public class HeadlineFragment extends Fragment implements HeadlineView {
 
     @Override
     public void onGetResults(List<Articles> articles) {
-        adapter = new HeadlineAdapter(getContext(), articles, itemClickListener);
+        adapter = new NewsAdapter(getContext(), articles, itemClickListener);
         adapter.notifyDataSetChanged();
         recyclerView.setAdapter(adapter);
         article = articles;

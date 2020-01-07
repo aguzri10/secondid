@@ -1,30 +1,27 @@
 package io.github.aguzri10.second.activity;
 
-import android.app.ProgressDialog;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import java.util.List;
 
 import io.github.aguzri10.second.R;
-import io.github.aguzri10.second.adapter.HeadlineAdapter;
+import io.github.aguzri10.second.adapter.NewsAdapter;
 import io.github.aguzri10.second.model.Articles;
-import io.github.aguzri10.second.model.ResponseModel;
 import io.github.aguzri10.second.presenter.HeadlinePresenter;
-import io.github.aguzri10.second.view.HeadlineView;
+import io.github.aguzri10.second.view.NewsView;
 
-public class MainActivity extends AppCompatActivity implements HeadlineView {
+public class MainActivity extends AppCompatActivity implements NewsView {
 
     private static final String country = "id";
     private static final String apiKey = "49e5243f2e9d418dbdb60f460e4e4ae9";
-    private HeadlineAdapter adapter;
+    private NewsAdapter adapter;
     private HeadlinePresenter presenter;
-    private HeadlineAdapter .ItemClickListerner itemClickListener;
+    private NewsAdapter.ItemClickListerner itemClickListener;
     private RecyclerView recyclerView;
     private SwipeRefreshLayout swipeRefresh;
     private List<Articles> article;
@@ -63,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements HeadlineView {
 
     @Override
     public void onGetResults(List<Articles> articles) {
-        adapter = new HeadlineAdapter(this, articles, itemClickListener);
+        adapter = new NewsAdapter(this, articles, itemClickListener);
         adapter.notifyDataSetChanged();
         recyclerView.setAdapter(adapter);
         article = articles;

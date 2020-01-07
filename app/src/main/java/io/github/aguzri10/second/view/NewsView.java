@@ -4,7 +4,7 @@ import java.util.List;
 
 import io.github.aguzri10.second.model.Articles;
 
-public interface HeadlineView {
+public interface NewsView {
 
     void onShowProgress();
     void onHideProgress();

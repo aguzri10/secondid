@@ -1,7 +1,6 @@
 package io.github.aguzri10.second.adapter;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -17,13 +16,13 @@ import java.util.List;
 import io.github.aguzri10.second.R;
 import io.github.aguzri10.second.model.Articles;
 
-public class HeadlineAdapter extends RecyclerView.Adapter<HeadlineAdapter.ViewHolder> {
+public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
 
     private Context context;
     private List<Articles> articles;
     private ItemClickListerner itemClickListener;
 
-    public HeadlineAdapter(Context context, List<Articles> articles, ItemClickListerner itemClickListener) {
+    public NewsAdapter(Context context, List<Articles> articles, ItemClickListerner itemClickListener) {
         this.context = context;
         this.articles = articles;
         this.itemClickListener = itemClickListener;
@@ -36,7 +35,7 @@ public class HeadlineAdapter extends RecyclerView.Adapter<HeadlineAdapter.ViewHo
     }
 
     @Override
-    public void onBindViewHolder(HeadlineAdapter.ViewHolder viewHolder, int i) {
+    public void onBindViewHolder(NewsAdapter.ViewHolder viewHolder, int i) {
         Articles article = articles.get(i);
         Picasso.get()
                 .load(article.getUrlToImage())

@@ -36,8 +36,8 @@ dependencies {
     // Retrofit 2 Gson
     implementation 'com.squareup.retrofit2:converter-gson:2.6.3'
     // Butter knife
-//    implementation 'com.jakewharton:butterknife:9.0.0'
-//    annotationProcessor 'com.jakewharton:butterknife-compiler:9.0.0'
+    implementation 'com.jakewharton:butterknife:9.0.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:9.0.0'
     // Picasso
     implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'com.android.support:design:28.0.0'
