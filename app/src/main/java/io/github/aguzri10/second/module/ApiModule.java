@@ -27,4 +27,11 @@ public interface ApiModule {
             @Query("category") String category,
             @Query("apiKey") String apiKey
     );
+
+    @GET("top-headlines")
+    Call<ResponseModel> getHealth(
+            @Query("country") String country,
+            @Query("category") String category,
+            @Query("apiKey") String apiKey
+    );
 }

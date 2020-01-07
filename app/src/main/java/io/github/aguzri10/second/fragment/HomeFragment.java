@@ -22,6 +22,7 @@ import io.github.aguzri10.second.R;
 import io.github.aguzri10.second.activity.BusinessActivity;
 import io.github.aguzri10.second.activity.DetailActivity;
 import io.github.aguzri10.second.activity.EntertainmentActivity;
+import io.github.aguzri10.second.activity.HealthActivity;
 import io.github.aguzri10.second.model.Articles;
 import io.github.aguzri10.second.presenter.HeadlinePresenter;
 import io.github.aguzri10.second.view.NewsView;
@@ -90,6 +91,13 @@ public class HomeFragment extends Fragment implements NewsView {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getContext(), EntertainmentActivity.class));
+            }
+        });
+
+        crHealth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), HealthActivity.class));
             }
         });
     }
