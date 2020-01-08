@@ -81,4 +81,27 @@ public class CategoryPresenter {
             }
         });
     }
+
+    public void getDataSport(String country, String category, String apiKey) {
+
+        view.onShowProgress();
+
+        ApiModule apiModule = AppModule.getClient().create(ApiModule.class);
+        Call<ResponseModel> call = apiModule.getSport(country, category, apiKey);
+        call.enqueue(new Callback<ResponseModel>() {
+            @Override
+            public void onResponse(Call<ResponseModel> call, Response<ResponseModel> response) {
+                view.onHideProgress();
+                if (response.isSuccessful() && response.body() != null) {
+                    view.onGetResults(response.body().getArticles());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseModel> call, Throwable t) {
+                view.onHideProgress();
+                view.onErrorResults(t.getLocalizedMessage());
+            }
+        });
+    }
 }

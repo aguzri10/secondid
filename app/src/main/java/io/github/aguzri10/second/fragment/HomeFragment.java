@@ -100,6 +100,13 @@ public class HomeFragment extends Fragment implements NewsView {
                 startActivity(new Intent(getContext(), HealthActivity.class));
             }
         });
+
+        crSport.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), HealthActivity.class));
+            }
+        });
     }
 
     @Override

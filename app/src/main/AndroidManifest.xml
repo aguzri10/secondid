@@ -11,14 +11,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.HealthActivity"></activity>
+        <activity android:name=".activity.SportActivity"></activity>
+        <activity android:name=".activity.HealthActivity" />
         <activity
-            android:label="Entertainment News"
             android:name=".activity.EntertainmentActivity"
+            android:label="Entertainment News"
             android:screenOrientation="portrait" />
         <activity
-            android:label="Business News"
             android:name=".activity.BusinessActivity"
+            android:label="Business News"
             android:screenOrientation="portrait" />
         <activity
             android:name=".activity.DetailActivity"
