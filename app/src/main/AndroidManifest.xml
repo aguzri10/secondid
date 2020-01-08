@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.SportActivity"></activity>
+        <activity android:name=".activity.ScienceActivity"></activity>
+        <activity android:name=".activity.SportActivity" />
         <activity android:name=".activity.HealthActivity" />
         <activity
             android:name=".activity.EntertainmentActivity"

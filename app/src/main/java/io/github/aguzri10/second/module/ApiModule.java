@@ -15,6 +15,13 @@ public interface ApiModule {
     );
 
     @GET("top-headlines")
+    Call<ResponseModel> getApi(
+            @Query("country") String country,
+            @Query("category") String category,
+            @Query("apiKey") String apiKey
+    );
+
+    @GET("top-headlines")
     Call<ResponseModel> getBussiness(
             @Query("country") String country,
             @Query("category") String category,
@@ -37,6 +44,13 @@ public interface ApiModule {
 
     @GET("top-headlines")
     Call<ResponseModel> getSport(
+            @Query("country") String country,
+            @Query("category") String category,
+            @Query("apiKey") String apiKey
+    );
+
+    @GET("top-headlines")
+    Call<ResponseModel> getScience(
             @Query("country") String country,
             @Query("category") String category,
             @Query("apiKey") String apiKey

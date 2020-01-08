@@ -23,7 +23,7 @@ import io.github.aguzri10.second.view.NewsView;
 import static io.github.aguzri10.second.module.AppModule.apiKey;
 import static io.github.aguzri10.second.module.AppModule.country;
 
-public class SportActivity extends AppCompatActivity implements NewsView {
+public class ScienceActivity extends AppCompatActivity implements NewsView {
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
@@ -32,7 +32,7 @@ public class SportActivity extends AppCompatActivity implements NewsView {
     @BindView(R.id.recycler_view)
     RecyclerView recyclerView;
 
-    private static final String category = "sports";
+    private static final String category = "science";
     private List<Articles> article;
     private NewsAdapter adapter;
     private NewsAdapter .ItemClickListerner itemClickListerner;
@@ -41,12 +41,12 @@ public class SportActivity extends AppCompatActivity implements NewsView {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sport);
+        setContentView(R.layout.activity_science);
 
         ButterKnife.bind(this);
 
         setSupportActionBar(toolbar);
-        toolbar.setTitle("Sport News");
+        toolbar.setTitle("Science News");
         toolbar.setTitleTextColor(getResources().getColor(R.color.colorWhite));
         toolbar.setNavigationIcon(getResources().getDrawable(R.drawable.ic_arrow_back));
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -58,12 +58,12 @@ public class SportActivity extends AppCompatActivity implements NewsView {
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         presenter = new CategoryPresenter(this);
-        presenter.getDataSport(country, category, apiKey);
+        presenter.getDataScience(country, category, apiKey);
 
         swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                presenter.getDataSport(country, category, apiKey);
+                presenter.getDataScience(country, category, apiKey);
             }
         });
 
@@ -76,7 +76,7 @@ public class SportActivity extends AppCompatActivity implements NewsView {
                 String published = article.get(i).getPublishedAt();
                 String content = article.get(i).getContent();
 
-                Intent intent = new Intent(SportActivity.this, DetailActivity.class);
+                Intent intent = new Intent(ScienceActivity.this, DetailActivity.class);
                 intent.putExtra("image", image);
                 intent.putExtra("title", title);
                 intent.putExtra("author", author);
