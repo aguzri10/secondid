@@ -22,7 +22,7 @@ public class CategoryPresenter {
         view.onShowProgress();
 
         ApiModule apiModule = AppModule.getClient().create(ApiModule.class);
-        Call<ResponseModel> call = apiModule.getBussiness(country, category, apiKey);
+        Call<ResponseModel> call = apiModule.getApi(country, category, apiKey);
         call.enqueue(new Callback<ResponseModel>() {
             @Override
             public void onResponse(Call<ResponseModel> call, Response<ResponseModel> response) {
@@ -44,7 +44,7 @@ public class CategoryPresenter {
         view.onShowProgress();
 
         ApiModule apiModule = AppModule.getClient().create(ApiModule.class);
-        Call<ResponseModel> call = apiModule.getEntertainment(country, category, apiKey);
+        Call<ResponseModel> call = apiModule.getApi(country, category, apiKey);
         call.enqueue(new Callback<ResponseModel>() {
             @Override
             public void onResponse(Call<ResponseModel> call, Response<ResponseModel> response) {
@@ -66,7 +66,7 @@ public class CategoryPresenter {
         view.onShowProgress();
 
         ApiModule apiModule = AppModule.getClient().create(ApiModule.class);
-        Call<ResponseModel> call = apiModule.getHealth(country, category, apiKey);
+        Call<ResponseModel> call = apiModule.getApi(country, category, apiKey);
         call.enqueue(new Callback<ResponseModel>() {
             @Override
             public void onResponse(Call<ResponseModel> call, Response<ResponseModel> response) {
@@ -89,7 +89,7 @@ public class CategoryPresenter {
         view.onShowProgress();
 
         ApiModule apiModule = AppModule.getClient().create(ApiModule.class);
-        Call<ResponseModel> call = apiModule.getSport(country, category, apiKey);
+        Call<ResponseModel> call = apiModule.getApi(country, category, apiKey);
         call.enqueue(new Callback<ResponseModel>() {
             @Override
             public void onResponse(Call<ResponseModel> call, Response<ResponseModel> response) {
@@ -112,7 +112,32 @@ public class CategoryPresenter {
         view.onShowProgress();
 
         ApiModule apiModule = AppModule.getClient().create(ApiModule.class);
-        Call<ResponseModel> call = apiModule.getScience(country, category, apiKey);
+        Call<ResponseModel> call = apiModule.getApi(country, category, apiKey);
+        call.enqueue(new Callback<ResponseModel>() {
+            @Override
+            public void onResponse(Call<ResponseModel> call, Response<ResponseModel> response) {
+                view.onHideProgress();
+                if (response.isSuccessful() && response.body() != null) {
+                    view.onGetResults(response.body().getArticles());
+                } else {
+                    view.onErrorResults("Response not successful and no body!");
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseModel> call, Throwable t) {
+                view.onHideProgress();
+                view.onErrorResults(t.getLocalizedMessage());
+            }
+        });
+    }
+
+    public void getDataTech(String country, String category, String apiKey) {
+
+        view.onShowProgress();
+
+        ApiModule apiModule = AppModule.getClient().create(ApiModule.class);
+        Call<ResponseModel> call = apiModule.getApi(country, category, apiKey);
         call.enqueue(new Callback<ResponseModel>() {
             @Override
             public void onResponse(Call<ResponseModel> call, Response<ResponseModel> response) {

@@ -24,6 +24,9 @@ import io.github.aguzri10.second.activity.DetailActivity;
 import io.github.aguzri10.second.activity.EntertainmentActivity;
 import io.github.aguzri10.second.activity.HealthActivity;
 import io.github.aguzri10.second.activity.ScienceActivity;
+import io.github.aguzri10.second.activity.SportActivity;
+import io.github.aguzri10.second.activity.TechnologyActivity;
+import io.github.aguzri10.second.activity.TechnologyActivity_ViewBinding;
 import io.github.aguzri10.second.model.Articles;
 import io.github.aguzri10.second.presenter.HeadlinePresenter;
 import io.github.aguzri10.second.view.NewsView;
@@ -112,7 +115,14 @@ public class HomeFragment extends Fragment implements NewsView {
         crSport.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getContext(), HealthActivity.class));
+                startActivity(new Intent(getContext(), SportActivity.class));
+            }
+        });
+
+        crTechnology.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), TechnologyActivity.class));
             }
         });
 
