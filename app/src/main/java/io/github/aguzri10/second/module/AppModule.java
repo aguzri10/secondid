@@ -6,7 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class AppModule {
 
     private static final String BASE_URL = "https://newsapi.org/v2/";
-    public static final String apiKey = "49e5243f2e9d418dbdb60f460e4e4ae9";
+    public static final String apiKey = "<YOUR API KEY>";
     public static final String country = "id";
 
     private static Retrofit retrofit = null;
