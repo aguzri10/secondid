@@ -26,7 +26,7 @@ import io.github.aguzri10.second.activity.HealthActivity;
 import io.github.aguzri10.second.activity.ScienceActivity;
 import io.github.aguzri10.second.activity.SportActivity;
 import io.github.aguzri10.second.activity.TechnologyActivity;
-import io.github.aguzri10.second.activity.TechnologyActivity_ViewBinding;
+import io.github.aguzri10.second.adapter.TopAdapter;
 import io.github.aguzri10.second.model.Articles;
 import io.github.aguzri10.second.presenter.HeadlinePresenter;
 import io.github.aguzri10.second.view.NewsView;
@@ -47,6 +47,8 @@ public class HomeFragment extends Fragment implements NewsView {
 
     private List<Articles> article;
     private HeadlinePresenter presenter;
+    private TopAdapter adapter;
+    private TopAdapter .ItemClickListener itemClickListener;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -60,29 +62,29 @@ public class HomeFragment extends Fragment implements NewsView {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-//        recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
-//        presenter = new HeadlinePresenter(this);
-//        presenter.getDataHeadline(country, apiKey);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
+        presenter = new HeadlinePresenter(this);
+        presenter.getDataHeadline(country, apiKey);
 
-//        swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-//            @Override
-//            public void onRefresh() {
-//                presenter.getDataHeadline(country, apiKey);
-//            }
-//        });
-//
-//        itemClickListener = (new HorizonAdapter.ItemClickListener() {
-//            @Override
-//            public void onItemClick(View view, int i) {
-//                String image = article.get(i).getUrlToImage();
-//                String title = article.get(i).getTitle();
-//
-//                Intent intent = new Intent(getContext(), DetailActivity.class);
-//                intent.putExtra("image", image);
-//                intent.putExtra("title", title);
-//                startActivity(intent);
-//            }
-//        });
+        swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                presenter.getDataHeadline(country, apiKey);
+            }
+        });
+
+        itemClickListener = (new TopAdapter.ItemClickListener() {
+            @Override
+            public void onClick(View view, int i) {
+                String image = article.get(i).getUrlToImage();
+                String title = article.get(i).getTitle();
+
+                Intent intent = new Intent(getContext(), DetailActivity.class);
+                intent.putExtra("image", image);
+                intent.putExtra("title", title);
+                startActivity(intent);
+            }
+        });
 
         crBusiness.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -130,24 +132,24 @@ public class HomeFragment extends Fragment implements NewsView {
 
     @Override
     public void onShowProgress() {
-//        swipeRefresh.setRefreshing(true);
+        swipeRefresh.setRefreshing(true);
     }
 
     @Override
     public void onHideProgress() {
-//        swipeRefresh.setRefreshing(false);
+        swipeRefresh.setRefreshing(false);
     }
 
     @Override
     public void onGetResults(List<Articles> articles) {
-//        adapter = new HorizonAdapter(getContext(), articles, itemClickListener);
-//        adapter.notifyDataSetChanged();
-//        recyclerView.setAdapter(adapter);
-//        article = articles;
+        adapter = new TopAdapter(getContext(), articles, itemClickListener);
+        adapter.notifyDataSetChanged();
+        recyclerView.setAdapter(adapter);
+        article = articles;
     }
 
     @Override
     public void onErrorResults(String message) {
-//        Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
+        Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
     }
 }
