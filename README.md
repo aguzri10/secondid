@@ -1,5 +1,6 @@
 # Second ID
-Second ID is an information application about news in Indonesia, data is taken from newsapi.org
+Second ID is an information application about headline news in Indonesia, data is taken from newsapi.org.
+Headline category : Business, Entertainment, Helath, Science, Sports and Technology
 
 Buid with Android Studio 3.3 and some libraries
 1. MVP Design Patern
